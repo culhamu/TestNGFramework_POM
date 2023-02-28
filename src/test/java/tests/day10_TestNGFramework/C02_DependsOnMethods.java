@@ -18,7 +18,11 @@ public class C02_DependsOnMethods {
     önce bağlı olduğu methodu çalışştırır sonra kendi çalışır
     ancak 2 method için geçerlidir 3 method için geçerli değildir
 
+    dependsOnMethods bir sıralama yöntemi değildir
+    sıra bağlı olan bir methoda geldiğinde öncelikle bağlı olduğu methodun
+    çalışmasını ve PASSED olmasını bekler
 
+    Eğer bağlı olunan method FAILED olursa bağlı olunan method çalışmaz ignore edilir
      */
 
     // 3 test method'u olusturun
