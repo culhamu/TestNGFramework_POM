@@ -7,6 +7,19 @@ import pages.AmazonPage;
 import utilities.Driver;
 
 public class C02_DependsOnMethods {
+    AmazonPage amazonPage = new AmazonPage();
+
+    /*
+    Priority öncelik belirler ama testleri birbirine bağlamaz
+    Eğer bir test method'unun çalışması başka bir teste bağlı ise
+    bu durumda dependsOnMethods kullanmak daha iyidir
+
+    dependOnMethod ile başka bir methoda bağlı olan methodu çalıştırmak istersek
+    önce bağlı olduğu methodu çalışştırır sonra kendi çalışır
+    ancak 2 method için geçerlidir 3 method için geçerli değildir
+
+
+     */
 
     // 3 test method'u olusturun
     // 1. amazona gidip amazona gittigimizi test edin
@@ -24,10 +37,10 @@ public class C02_DependsOnMethods {
         Assert.assertTrue(actualurl.contains(expectedIcerik));
     }
 
-    @Test
+    @Test(dependsOnMethods = "amazonTesti")
     public void nutellaTesti(){
 
-        AmazonPage amazonPage = new AmazonPage();
+
         amazonPage.aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
 
         String expectedIcerik = "Nutella";
@@ -37,10 +50,16 @@ public class C02_DependsOnMethods {
 
     }
 
-    @Test
+    @Test(dependsOnMethods = "nutellaTesti")
     public void ilkUrunTesti(){
 
+    amazonPage.ilkUrun.click();
+    String expectedIcerik="Nutella";
+    String actualUrunIsmi=amazonPage.ilkUrunIsimElementi.getText();
 
+    Assert.assertTrue(actualUrunIsmi.contains(expectedIcerik));
+
+    Driver.closeDriver();
     }
 
 }
