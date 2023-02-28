@@ -20,9 +20,12 @@ public class Driver {
     public static WebDriver getDriver(){
 
         WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
+        if (driver==null){
+            driver=new ChromeDriver();
+        }
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
 
         return driver;
 
@@ -30,11 +33,22 @@ public class Driver {
 
     public static void closeDriver(){
 
-        driver.close();
+        if (driver!=null){
+            driver.close();
+            driver=null;
+        }
+
+    }
+    public static void quitDriver(){
+
+        if (driver!=null){
+            driver.quit();
+            driver=null;
+        }
+
     }
 }
-    git add README.md
-        git commit -m "first commit"
-        git branch -M main
-        git remote add origin https://github.com/culhamu/Team108_TestNGFramework_POM.git
-        git push -u origin main
+
+
+
+
