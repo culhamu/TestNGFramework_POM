@@ -8,24 +8,28 @@ import java.time.Duration;
 
 public class Driver {
 
-    //Daha fazla kontrol imkanı ve extends kullanmadan driver'a ulaşmak için
-    //webDriver objesini statik bir method ile oluşturacaz
+    /* Daha fazla kontrol imkani ve extends kullanmadan driver'a ulasmak icin
+       webDriver objesini Driver class'indaki static bir method ile olusturacagiz
 
-    //Ancak getDriver() Method'u her kullanıldığında yeni bir driver oluşturuyor
-    //bunu engellemek ve kodumuzun düzgün çalışmasını sağlamak için
-    //ilk kullanımda driver=new ChromeDriver(); kodu çalışsın
-    //sonraki kullanımlarda çalışmasın diye bir yntem geliştirmeliyiz
+      Ancak getDriver() her kullanildiginda yeni bir driver olusturuyor
+      bunu engellemek ve kodumuzun duzgun calismasini saglamak icin
+      ilk kullanimda  driver= new ChromeDriver(); kodu calissin
+      sonraki kullanimlarda calismasin diye bir yontem gelistirmeliyiz
+
+     */
+
     public static WebDriver driver;
 
     public static WebDriver getDriver(){
 
         WebDriverManager.chromedriver().setup();
-        if (driver==null){
-            driver=new ChromeDriver();
+
+        if (driver==null) {
+            driver = new ChromeDriver();
         }
+
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-
 
         return driver;
 
@@ -33,22 +37,19 @@ public class Driver {
 
     public static void closeDriver(){
 
-        if (driver!=null){
+        if (driver != null){
             driver.close();
             driver=null;
         }
 
     }
+
     public static void quitDriver(){
 
-        if (driver!=null){
+        if (driver != null){
             driver.quit();
             driver=null;
         }
 
     }
 }
-
-
-
-

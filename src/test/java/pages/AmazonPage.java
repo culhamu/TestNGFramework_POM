@@ -8,27 +8,31 @@ import utilities.Driver;
 public class AmazonPage {
 
     /*
-    Pages class'lari sürekli kullandığımız locateleri tekrar tekrar locate etmek zorunda kalmaktan kurtulmak için kullanılır
+        Pages class'lari surekli kullandigimiz locate'leri
+        tekrar tekrar locate etmek zorunda kalmaktan kurtulmak icin kullanilir
 
-    Her pages class'ı driver class'ında oluşturulan driver'ı kullanılır
+        Her pages class'i Driver class'inda olusturulan driver'i kullanir
 
-    @FindBy notasyonunun Driver class'ındaki webDriver'ı kullanabilmesi için
-    bu class' a tanıtmalıyız
+        @FindBy notasyonunun Driver class'indaki webDriver'i kullanabilmesi icin
+        bu class'a tanitmamiz gerekiyor
 
-    Bunun için her pages sayfası ilk oluşturulduğunda başına parametresiz bir
-    consructor oluşturup içerisinde driver'ı bu class'a tanuturuz
+        bunun icin her pages sayfasi ilk olusturuldugunda
+        basina parametresiz bir constructor olusturup
+        icerisinde driver'i bu class'a tanitiyoruz.
+
      */
 
     public AmazonPage(){
-
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(id="twotabsearchtextbox")
+    @FindBy(id="twotabsearctextbox")
+    public WebElement aramaKutusu;
 
-        public WebElement aramaKutusu;
     @FindBy(xpath = "//h1[@class='a-size-base s-desktop-toolbar a-text-normal']")
-
     public WebElement aramaSonucElementi;
+
+
+
 
 }
