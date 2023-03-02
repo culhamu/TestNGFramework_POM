@@ -8,28 +8,29 @@ import utilities.Driver;
 import utilities.TestBaseRapor;
 
 public class C03_RaporluPozitifLoginTesti extends TestBaseRapor {
-    QdPage qdPage=new QdPage();
+    @Test
+    public void pozitifLoginTesti(){
+        extentTest = extentReports.createTest("Pozitif login testi","gecerli bilgilerle giris yapilabilmeli");
+        // qd anasayfaya gidin
+        Driver.getDriver().get(ConfigReader.getProperty("qdUrl"));
+        extentTest.info("Qualitydemy anasayfaya gidildi");
 
-    @Test(groups = "smoke")
-    public void positiveLoginTesti(){
-        extentTest=extentReports.createTest("Pozitif login testi","Geçerli bilgilerle giriş yapılabilmeli");
-        //qd anasayfaya gidin
-        Driver.getDriver().get(ConfigReader.getProperty("qualityUrl"));
-
-        //Login butonuna basın
-        QdPage qdPage=new QdPage();
+        // login linkine tiklayin
+        QdPage qdPage= new QdPage();
         qdPage.ilkLoginLinki.click();
+        extentTest.info("Ilk login linkine tiklandi");
 
-        //geçerli kullanıcı adı ve password ile giriş yapın
+        // gecerli kullanici adi ve password ile giris yapin
         qdPage.emailKutusu.sendKeys(ConfigReader.getProperty("qdGecerliUsername"));
-        qdPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecerliPassword"));
+        extentTest.info("Gecerli email yazildi");
+        qdPage.passwordKutusu.sendKeys(ConfigReader.getProperty("qdGecersizPassword"));
+        extentTest.info("Gecerli password yazildi");
         qdPage.loginButonu.click();
+        extentTest.info("Login butonuna basildi");
 
-        //basarili bir şekilde giriş yapıldığonı test edin
+        // basarili bir sekilde giris yapildigini test edin
         Assert.assertTrue(qdPage.basariliGirisElementi.isDisplayed());
-
-
-
+        extentTest.pass("Basarili sekilde giris yapildigi test edildi");
 
     }
 }
