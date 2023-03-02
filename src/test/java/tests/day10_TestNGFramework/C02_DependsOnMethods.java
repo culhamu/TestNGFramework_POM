@@ -30,7 +30,7 @@ public class C02_DependsOnMethods {
     // 2. Nutella aratip, sonucun Nutella icerdigini test edin
     // 3. ilk urune click yapip, urun isminin Nutella icerdigini test edin
 
-    @Test
+    @Test(groups = "smoke")
     public void amazonTesti(){
 
         Driver.getDriver().get("https://www.amazon.com");

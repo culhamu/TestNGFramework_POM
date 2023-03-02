@@ -49,7 +49,7 @@ public class C01_Priority {
         Driver.closeDriver();
     }
 
-    @Test
+    @Test(groups = "smoke")
     public void wiseTesti() throws InterruptedException {
         // wisequarter ana sayfaya gidip, wisequarter'a gittigimizi test edelim
         Driver.getDriver().get("https://www.wisequarter.com");
