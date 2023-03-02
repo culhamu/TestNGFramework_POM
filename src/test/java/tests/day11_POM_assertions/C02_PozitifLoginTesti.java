@@ -7,7 +7,7 @@ import pages.QdPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
-public class C02_PositiveLoginTesti {
+public class C02_PozitifLoginTesti {
 
     @Test
     public void positiveLoginTesti(){
