@@ -1,15 +1,18 @@
-package tests.day11_POM_assertions;
+package tests.day12_xmlFiles;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.QdPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.TestBaseRapor;
 
-public class C02_PozitifLoginTesti {
+public class C03_RaporluPozitifLoginTesti extends TestBaseRapor {
+    QdPage qdPage=new QdPage();
 
     @Test(groups = "smoke")
     public void positiveLoginTesti(){
+        extentTest=extentReports.createTest("Pozitif login testi","Geçerli bilgilerle giriş yapılabilmeli");
         //qd anasayfaya gidin
         Driver.getDriver().get(ConfigReader.getProperty("qualityUrl"));
 
@@ -26,7 +29,7 @@ public class C02_PozitifLoginTesti {
         Assert.assertTrue(qdPage.basariliGirisElementi.isDisplayed());
 
 
-        Driver.closeDriver();
+
 
     }
 }
