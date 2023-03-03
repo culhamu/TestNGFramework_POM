@@ -38,7 +38,7 @@ public class Q3 {
         SoftAssert softAssert=new SoftAssert();
 
         String expected="Price (low to high)";
-        String actual=ddm.getText();
+        String actual=Driver.getDriver().findElement(By.className("active_option")).getText();
 
         softAssert.assertEquals(actual,expected);
 
