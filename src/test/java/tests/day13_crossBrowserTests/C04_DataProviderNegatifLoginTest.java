@@ -20,7 +20,7 @@ public class C04_DataProviderNegatifLoginTest {
     @DataProvider
     public static Object[][] kullanicilar() {
 
-        String[][] kallaniciList={{"Zafer","12345"},{"Mehmet","34567"},{"Sevilay","67890"},{"Enver","56789"},{"Ahmet Emre","54321"}}
+        String[][] kallaniciList={{"Zafer","12345"},{"Mehmet","34567"},{"Sevilay","67890"},{"Enver","56789"},{"Ahmet Emre","54321"}};
         return kallaniciList;
     }
 
