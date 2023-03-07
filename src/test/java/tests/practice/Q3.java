@@ -50,7 +50,7 @@ public class Q3 {
         List <WebElement> fiyatlar = Driver.getDriver().findElements(By.className("inventory_item_price"));
         ArrayList<Double> fiyatlarDouble = new ArrayList<>();
         for (WebElement fiyat: fiyatlar){
-            String fiyatStr = fiyat.getText().replaceAll("^\\D","");
+            String fiyatStr = fiyat.getText().replaceAll("\\D","");
             fiyatlarDouble.add(Double.valueOf(fiyatStr));
         }
 
