@@ -16,7 +16,10 @@ public class TestBaseCross {
     }
     @AfterMethod
     public void tearDown(){
-        DriverCross.closeDriver();
+        if (driver != null){
+            driver.close();
+            driver=null;
+        }
     }
 }
 
