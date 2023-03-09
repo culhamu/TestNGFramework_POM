@@ -46,9 +46,10 @@ public class Driver {
                     WebDriverManager.safaridriver().setup();
                     driver=new SafariDriver();
                     break;
-                default:
+                case "chrome":
                     WebDriverManager.chromedriver().setup();
                     driver = new ChromeDriver();
+                    break;
             }
 
         }
