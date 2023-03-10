@@ -45,7 +45,7 @@ public class QdPage {
     @FindBy(xpath = "//body[@id='tinymce']")
     public WebElement biography;
 
-    @FindBy(xpath = "//button[@class='btn red px-5 py-2 radius-8']")
+    @FindBy(xpath = "//*[text()='Save']")
     public WebElement saveButon;
 
    @FindBy(xpath = "//input[@name='last_name']")

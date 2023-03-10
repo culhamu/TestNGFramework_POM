@@ -56,6 +56,7 @@ public class QdTest {
             qdPage.biography.clear();
             qdPage.biography.sendKeys("Wisequarter ");
             Driver.getDriver().switchTo().defaultContent();
+            actions.sendKeys(Keys.END).perform();
 
             qdPage.saveButon.click();
 
