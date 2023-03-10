@@ -53,4 +53,7 @@ public class QdPage {
 
     @FindBy(xpath = "//input[@id='FristName']")
     public WebElement profileFirstNameBox;
+
+    @FindBy(xpath = "(//span[@class='header-underline'])[1]")
+     public WebElement topCatagories;
 }

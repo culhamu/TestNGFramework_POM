@@ -38,7 +38,7 @@ public class QdTest {
             actions.click(qdPage.userProfil).build().perform();
 
             // FirstName,Lastname,Biography, ve Linklerin kendine ait oldugunu dogrular
-            Assert.assertTrue(qdPage.profilName.getText().contains("nevzat celik"));
+            Assert.assertTrue(qdPage.profilName.getText().contains("Furkan inal"));
 
             Driver.getDriver().switchTo().frame(qdPage.iframe);
 
@@ -56,7 +56,9 @@ public class QdTest {
             qdPage.biography.clear();
             qdPage.biography.sendKeys("Wisequarter ");
             Driver.getDriver().switchTo().defaultContent();
-            actions.sendKeys(Keys.END).perform();
+            actions.scrollToElement(qdPage.topCatagories).build().perform();
+
+            ReusableMethods.bekle(2);
 
             qdPage.saveButon.click();
 
