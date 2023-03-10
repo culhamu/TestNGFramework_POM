@@ -35,4 +35,22 @@ public class QdPage {
 
     @FindBy(xpath = "/html/body/section[1]/div/nav/div[6]/div[2]/ul/li[6]/a/i")
     public WebElement userProfil;
+
+    @FindBy(xpath = "(//div[@class='name'])[2]")
+    public  WebElement profilName;
+
+    @FindBy(xpath = "//iframe[@id='Biography_ifr']")
+    public WebElement iframe;
+
+    @FindBy(xpath = "//body[@id='tinymce']")
+    public WebElement biography;
+
+    @FindBy(xpath = "//button[@class='btn red px-5 py-2 radius-8']")
+    public WebElement saveButon;
+
+   @FindBy(xpath = "//input[@name='last_name']")
+   public WebElement profileLastNameBox;
+
+    @FindBy(xpath = "//input[@id='FristName']")
+    public WebElement profileFirstNameBox;
 }
