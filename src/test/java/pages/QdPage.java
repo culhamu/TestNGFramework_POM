@@ -15,10 +15,10 @@ public class QdPage {
     @FindBy(xpath = "//a[.='Log in']")
     public WebElement ilkLoginLinki;
 
-    @FindBy(linkText = "login-email")
+    @FindBy(xpath = "//input[@name='email']")
     public WebElement emailKutusu;
 
-    @FindBy(linkText = "login-password")
+    @FindBy(xpath = "//input[@name='password']")
     public WebElement passwordKutusu;
 
     @FindBy(xpath = "//button[text()='Login']")
@@ -26,4 +26,13 @@ public class QdPage {
 
     @FindBy(xpath = "//a[text()='Instructor']")
     public WebElement basariliGirisElementi;
+
+    @FindBy(xpath = "//*[text()='Accept']")
+     public WebElement cookies;
+
+    @FindBy(xpath = "/html/body/section[1]/div/nav/div[6]/div[1]/a")
+     public WebElement userProfilImg;
+
+    @FindBy(xpath = "/html/body/section[1]/div/nav/div[6]/div[2]/ul/li[6]/a/i")
+    public WebElement userProfil;
 }
