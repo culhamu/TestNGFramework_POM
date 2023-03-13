@@ -1,5 +1,6 @@
 package tests.day13_crossBrowserTests;
 
+import com.github.javafaker.Faker;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
